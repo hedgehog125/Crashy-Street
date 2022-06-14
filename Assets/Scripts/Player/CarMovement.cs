@@ -4,14 +4,26 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class CarMovement : MonoBehaviour {
-    [SerializeField] private float speed;
-    [SerializeField] private float turnSpeed;
+    [Header("Movement")]
+    [SerializeField] private float acceleration;
+    [SerializeField] private float maxSpeed;
+    [SerializeField] private float reverseAcceleration;
+    [SerializeField] private float reverseMaxSpeed;
+
+    [Header("Turning")]
+    [SerializeField] private float turnAcceleration;
+    [SerializeField] private float reverseTurnAcceleration;
+    [SerializeField] private float maxTurnSpeed;
+    [SerializeField] private float reverseMaxTurnSpeed;
 
 
     private Rigidbody rb;
 
     private bool moveLeft;
     private bool moveRight;
+
+    private bool reversing;
+    private bool reverseDir;
 
     private void OnMoveLeft(InputValue input) {
         moveLeft = input.isPressed;
@@ -26,24 +38,39 @@ public class CarMovement : MonoBehaviour {
 
 	private void FixedUpdate() {
         Vector3 vel = rb.velocity;
-        Vector3 turnVel = rb.angularVelocity;
+        float turnVel = rb.angularVelocity.y;
 
         Vector3 dir = transform.forward;
         dir.y = 0; // No flying
+
         if (moveLeft && moveRight) {
-            dir *= -1;
-		}
-        else {
-            if (moveLeft) {
-                turnVel.y -= turnSpeed;
-            }
-            else if (moveRight) {
-                turnVel.y += turnSpeed;
+            if (! reversing) {
+                reverseDir = Random.Range(0, 2) == 1;
+                reversing = true;
 			}
 		}
-        vel += dir * speed;
+        else {
+            reversing = false;
+            if (moveLeft) {
+                turnVel -= turnAcceleration;
+            }
+            else if (moveRight) {
+                turnVel += turnAcceleration;
+			}
+		}
+        if (reversing) {
+            dir *= -1;
+            turnVel += reverseTurnAcceleration * (reverseDir? 1 : -1);
+        }
+
+        vel += dir * (reversing? reverseAcceleration : acceleration);
+        float max = reversing? reverseMaxSpeed : maxSpeed;
+        vel = Tools.LimitXZ(vel, max);
+
+        max = reversing? reverseMaxTurnSpeed : maxTurnSpeed;
+        turnVel = Tools.LimitSigned(turnVel, max);
 
         rb.velocity = vel;
-        rb.angularVelocity = turnVel;
+        rb.angularVelocity = new Vector3(rb.angularVelocity.x, turnVel, rb.angularVelocity.z);
 	}
 }
