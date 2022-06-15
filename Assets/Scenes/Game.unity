@@ -442,13 +442,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   acceleration: 1
-  maxSpeed: 10
-  reverseAcceleration: 1.5
-  reverseMaxSpeed: 7.5
-  turnAcceleration: 0.5
-  reverseTurnAcceleration: 0.75
+  maxSpeed: 15
+  reverseAcceleration: 0.5
+  reverseMaxSpeed: 10
+  turnAcceleration: 0.75
+  reverseTurnAcceleration: 0.5
   maxTurnSpeed: 2.5
-  reverseMaxTurnSpeed: 1
+  reverseMaxTurnSpeed: 3
+  reverseTurnDelay: 25
 --- !u!114 &506743993
 MonoBehaviour:
   m_ObjectHideFlags: 0

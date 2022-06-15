@@ -15,6 +15,7 @@ public class CarMovement : MonoBehaviour {
     [SerializeField] private float reverseTurnAcceleration;
     [SerializeField] private float maxTurnSpeed;
     [SerializeField] private float reverseMaxTurnSpeed;
+    [SerializeField] private int reverseTurnDelay;
 
 
     private Rigidbody rb;
@@ -24,6 +25,7 @@ public class CarMovement : MonoBehaviour {
 
     private bool reversing;
     private bool reverseDir;
+    private int reverseTurnTick;
 
     private void OnMoveLeft(InputValue input) {
         moveLeft = input.isPressed;
@@ -46,8 +48,10 @@ public class CarMovement : MonoBehaviour {
         if (moveLeft && moveRight) {
             if (! reversing) {
                 reverseDir = Random.Range(0, 2) == 1;
+
                 reversing = true;
-			}
+                reverseTurnTick = 0;
+            }
 		}
         else {
             reversing = false;
@@ -60,7 +64,19 @@ public class CarMovement : MonoBehaviour {
 		}
         if (reversing) {
             dir *= -1;
-            turnVel += reverseTurnAcceleration * (reverseDir? 1 : -1);
+            if (reverseTurnTick == 0) {
+                if (vel.x > 0 == dir.x > 0 && vel.y > 0 == dir.y > 0) {
+                    reverseTurnTick = 1;
+                }
+            }
+            if (reverseTurnTick != 0) {
+                if (reverseTurnTick == reverseTurnDelay) {
+                    turnVel += reverseTurnAcceleration * (reverseDir ? 1 : -1);
+                }
+                else {
+                    reverseTurnTick++;
+				}
+			}
         }
 
         vel += dir * (reversing? reverseAcceleration : acceleration);
