@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class boxScript : MonoBehaviour {
+public class Destructible : MonoBehaviour {
     [Header("Objects and references")]
     [SerializeField] private GameObject brokenPrefab;
     [SerializeField] private GameObject explosionPrefab;
@@ -23,7 +23,8 @@ public class boxScript : MonoBehaviour {
 	}
 
 	private void FixedUpdate() {
-        if ((lastVel - rb.velocity).magnitude >= breakThreshold) Break();
+        float acceleration = (lastVel - rb.velocity).magnitude;
+        if (acceleration >= breakThreshold) Break();
 
         if (rb.velocity.magnitude >= breakThreshold) Break();
     }

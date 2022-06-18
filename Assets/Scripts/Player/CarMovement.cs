@@ -10,6 +10,10 @@ public class CarMovement : MonoBehaviour {
     [SerializeField] private float reverseAcceleration;
     [SerializeField] private float reverseMaxSpeed;
 
+    [Header("Turning slowdown")]
+    [SerializeField] private float turningMoveSpeedMaintenance;
+    [SerializeField] private int turningSlowdownTime;
+
     [Header("Turning")]
     [SerializeField] private float turnAcceleration;
     [SerializeField] private float reverseTurnAcceleration;
@@ -26,6 +30,7 @@ public class CarMovement : MonoBehaviour {
     private bool reversing;
     private bool reverseDir;
     private int reverseTurnTick;
+    private int turningSlowdownTick;
 
     private void OnMoveLeft(InputValue input) {
         moveLeft = input.isPressed;
@@ -51,16 +56,30 @@ public class CarMovement : MonoBehaviour {
 
                 reversing = true;
                 reverseTurnTick = 0;
+
+                turningSlowdownTick = 0;
             }
 		}
         else {
             reversing = false;
-            if (moveLeft) {
-                turnVel -= turnAcceleration;
+            if (moveLeft || moveRight) {
+                float turnSpeed = turnAcceleration;
+                if (moveLeft) {
+                    turnSpeed *= -1;
+                }
+                turnVel += turnSpeed;
+
+                if (turningSlowdownTick == turningSlowdownTime) {
+                    vel.x *= turningMoveSpeedMaintenance;
+                    vel.z *= turningMoveSpeedMaintenance;
+                }
+                else {
+                    turningSlowdownTick++;
+                }
             }
-            else if (moveRight) {
-                turnVel += turnAcceleration;
-			}
+            else {
+                turningSlowdownTick = 0;
+            }
 		}
         if (reversing) {
             dir *= -1;
@@ -80,7 +99,7 @@ public class CarMovement : MonoBehaviour {
         }
 
         vel += dir * (reversing? reverseAcceleration : acceleration);
-        float max = reversing? reverseMaxSpeed : maxSpeed;
+        float max = reversing && reverseTurnTick != 0? reverseMaxSpeed : maxSpeed;
         vel = Tools.LimitXZ(vel, max);
 
         max = reversing? reverseMaxTurnSpeed : maxTurnSpeed;
