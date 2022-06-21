@@ -50,7 +50,7 @@ public class CarMovement : MonoBehaviour {
         rb = GetComponent<Rigidbody>();
 	}
     bool canTurn;
-    
+
 
     private void FixedUpdate() {
         Vector3 vel = rb.velocity;

@@ -2504,6 +2504,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2855269934340063517, guid: e8c7314768f6c4ecd91e1acdcaa71c6c, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2855269934340063517, guid: e8c7314768f6c4ecd91e1acdcaa71c6c, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2855269934340063517, guid: e8c7314768f6c4ecd91e1acdcaa71c6c, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9136385964311081290, guid: e8c7314768f6c4ecd91e1acdcaa71c6c, type: 3}
       propertyPath: m_Name
       value: Car
