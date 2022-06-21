@@ -9,6 +9,8 @@ public class CarMovement : MonoBehaviour {
     [SerializeField] private float maxSpeed;
     [SerializeField] private float reverseAcceleration;
     [SerializeField] private float reverseMaxSpeed;
+    [SerializeField] private float MaxAngle;
+
 
     [Header("Turning slowdown")]
     [SerializeField] private float turningMoveSpeedMaintenance;
@@ -21,7 +23,12 @@ public class CarMovement : MonoBehaviour {
     [SerializeField] private float reverseMaxTurnSpeed;
     [SerializeField] private int reverseTurnDelay;
 
+    [Header("misc")]
+    public int collisioncap = 2;
+    public GameObject recover;
 
+    [Header("Debug Values")]
+    public Collider[] collisions;
     private Rigidbody rb;
 
     private bool moveLeft;
@@ -42,8 +49,10 @@ public class CarMovement : MonoBehaviour {
 	private void Awake() {
         rb = GetComponent<Rigidbody>();
 	}
+    bool canTurn;
+    
 
-	private void FixedUpdate() {
+    private void FixedUpdate() {
         Vector3 vel = rb.velocity;
         float turnVel = rb.angularVelocity.y;
 
@@ -101,11 +110,33 @@ public class CarMovement : MonoBehaviour {
         vel += dir * (reversing? reverseAcceleration : acceleration);
         float max = reversing && reverseTurnTick != 0? reverseMaxSpeed : maxSpeed;
         vel = Tools.LimitXZ(vel, max);
-
+        collisions = Physics.OverlapBox(transform.position,Vector3.Scale(transform.lossyScale,new Vector3(1.1f,1.1f,1.1f)));
         max = reversing? reverseMaxTurnSpeed : maxTurnSpeed;
         turnVel = Tools.LimitSigned(turnVel, max);
-
-        rb.velocity = vel;
+        recover.SetActive(false);
+        if (WrapAngle(transform.eulerAngles.x) < MaxAngle && WrapAngle(transform.eulerAngles.x) > -MaxAngle && WrapAngle(transform.eulerAngles.z) < MaxAngle && WrapAngle(transform.eulerAngles.z) > -MaxAngle) 
+            rb.velocity = vel;
+        else
+        {
+            if(rb.velocity.magnitude < 1f)
+            {
+                recover.SetActive(true);
+                if (moveLeft || moveRight)
+                {
+                    transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
+                    transform.position = new Vector3(transform.position.x, transform.position.y + 0.1f, transform.position.z);
+                }
+            }
+        }
+        if (collisions.Length <= collisioncap) turnVel = 0;
         rb.angularVelocity = new Vector3(rb.angularVelocity.x, turnVel, rb.angularVelocity.z);
 	}
+    private static float WrapAngle(float angle)
+    {
+        angle %= 360;
+        if (angle > 180)
+            return angle - 360;
+
+        return angle;
+    }
 }
