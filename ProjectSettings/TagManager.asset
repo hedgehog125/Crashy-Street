@@ -5,11 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Car
+  - movableobjects
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - movableobjects
   - Water
   - UI
   - 

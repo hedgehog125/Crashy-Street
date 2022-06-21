@@ -950,7 +950,7 @@ Transform:
   m_GameObject: {fileID: 9136385964311081290}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3190858605608594051}
@@ -982,7 +982,7 @@ MonoBehaviour:
   maxTurnSpeed: 2.5
   reverseMaxTurnSpeed: 5
   reverseTurnDelay: 25
-  collisioncap: 0
+  collisioncap: 1
   recover: {fileID: 4125942930503851564}
   collisions: []
 --- !u!114 &9136385964311081281
