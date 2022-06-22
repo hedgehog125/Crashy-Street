@@ -71,11 +71,13 @@ public class carAi : MonoBehaviour
         {
             reversing = false;
             float turnSpeed = turnAcceleration;
+
             if (pointer.transform.localEulerAngles.y > 255)
             {
                 turnSpeed *= -1;
             }
-            turnVel += turnSpeed;
+            if(pointer.transform.localEulerAngles.y > 1 && pointer.transform.localEulerAngles.y < 359)
+                turnVel += turnSpeed;
 
             if (turningSlowdownTick == turningSlowdownTime)
             {

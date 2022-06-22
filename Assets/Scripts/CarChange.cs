@@ -12,15 +12,26 @@ public class CarChange : MonoBehaviour
     public int car;
     public Text txt;
     public bool menu;
+    public int offset;
     int childcount;
     // Start is called before the first frame update
     void Start()
     {
+        car = PlayerPrefs.GetInt("SelectedCar", 0);
         foreach (Transform child in carhold.transform)
         {
             childcount += 1;
         }
-        car = PlayerPrefs.GetInt("SelectedCar", 0);
+        if (offset == -1)
+        {
+            if (car == 0) car = childcount - 1;
+            else car--;
+        }
+        if (offset == 1)
+        {
+            if (car == childcount - 1) car = 0;
+            else car++;
+        }
         ChangeCar();
     }
 
@@ -42,14 +53,14 @@ public class CarChange : MonoBehaviour
             {
                 if (car == 0) car = childcount - 1;
                 else car--;
-                PlayerPrefs.SetInt("SelectedCar", car);
+                if (offset == 0) PlayerPrefs.SetInt("SelectedCar", car);
                 ChangeCar();
             }
             if (moveRight && moveRight != prevright)
             {
                 if (car == childcount - 1) car = 0;
                 else car++;
-                PlayerPrefs.SetInt("SelectedCar", car);
+                if (offset == 0) PlayerPrefs.SetInt("SelectedCar", car);
                 ChangeCar();
             }
             prevleft = moveLeft;

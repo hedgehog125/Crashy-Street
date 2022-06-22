@@ -61,6 +61,8 @@ public class CarMovement : MonoBehaviour {
 
         if (moveLeft && moveRight) {
             if (! reversing) {
+                rb.velocity = new Vector3(0, 0, 0);
+                rb.angularVelocity = new Vector3(0, 0, 0);
                 reverseDir = Random.Range(0, 2) == 1;
 
                 reversing = true;
@@ -114,11 +116,14 @@ public class CarMovement : MonoBehaviour {
         max = reversing? reverseMaxTurnSpeed : maxTurnSpeed;
         turnVel = Tools.LimitSigned(turnVel, max);
         recover.SetActive(false);
-        if (WrapAngle(transform.eulerAngles.x) < MaxAngle && WrapAngle(transform.eulerAngles.x) > -MaxAngle && WrapAngle(transform.eulerAngles.z) < MaxAngle && WrapAngle(transform.eulerAngles.z) > -MaxAngle) 
+        if (WrapAngle(transform.eulerAngles.x) < MaxAngle && WrapAngle(transform.eulerAngles.x) > -MaxAngle && WrapAngle(transform.eulerAngles.z) < MaxAngle && WrapAngle(transform.eulerAngles.z) > -MaxAngle)
+        {
+            rb.angularVelocity = new Vector3(rb.angularVelocity.x, turnVel, rb.angularVelocity.z);
             rb.velocity = vel;
+        }
         else
         {
-            if(rb.velocity.magnitude < 1f)
+            if (rb.velocity.magnitude < 1f)
             {
                 recover.SetActive(true);
                 if (moveLeft || moveRight)
@@ -128,8 +133,8 @@ public class CarMovement : MonoBehaviour {
                 }
             }
         }
-        if (collisions.Length <= collisioncap) turnVel = 0;
-        rb.angularVelocity = new Vector3(rb.angularVelocity.x, turnVel, rb.angularVelocity.z);
+        
+        
 	}
     private static float WrapAngle(float angle)
     {
