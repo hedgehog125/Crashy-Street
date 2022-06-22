@@ -11600,8 +11600,8 @@ MonoBehaviour:
   halfway: {fileID: 6166662217648615006}
   threequarters: {fileID: 3317287679690879212}
   health: 100
-  damagemultiplier: 0.1
-  collisioncap: 2
+  damagemultiplier: 0.5
+  collisioncap: 3
   recover: {fileID: 4125942930503851564}
   collisions: []
 --- !u!114 &9136385964311081281

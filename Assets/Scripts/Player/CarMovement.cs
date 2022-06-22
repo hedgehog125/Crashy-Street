@@ -139,14 +139,14 @@ public class CarMovement : MonoBehaviour {
         max = reversing? reverseMaxTurnSpeed : maxTurnSpeed;
         turnVel = Tools.LimitSigned(turnVel, max);
         recover.SetActive(false);
-        if (WrapAngle(transform.eulerAngles.x) < MaxAngle && WrapAngle(transform.eulerAngles.x) > -MaxAngle && WrapAngle(transform.eulerAngles.z) < MaxAngle && WrapAngle(transform.eulerAngles.z) > -MaxAngle && collisions.Length >= 2)
+        if (WrapAngle(transform.eulerAngles.x) < MaxAngle && WrapAngle(transform.eulerAngles.x) > -MaxAngle && WrapAngle(transform.eulerAngles.z) < MaxAngle && WrapAngle(transform.eulerAngles.z) > -MaxAngle && collisions.Length >= collisioncap)
         {
             rb.angularVelocity = new Vector3(rb.angularVelocity.x, turnVel, rb.angularVelocity.z); ;
             rb.velocity = vel;
         }
         else
         {
-            if (rb.velocity.magnitude < 1f)
+            if (rb.velocity.magnitude < 0.1f)
             {
                 recover.SetActive(true);
                 if (moveLeft || moveRight)
