@@ -23,15 +23,15 @@ public class CarMovement : MonoBehaviour {
     [SerializeField] private float reverseMaxTurnSpeed;
     [SerializeField] private int reverseTurnDelay;
 
-    [Header("partical effects")]
-    public GameObject halfway;
-    public GameObject threequarters;
+    [Header("Particle effects")]
+    [SerializeField] private GameObject halfway;
+    [SerializeField] private GameObject threequarters;
 
-    [Header("misc")]
-    public float health;
-    public float damagemultiplier;
-    public int collisioncap = 2;
-    public GameObject recover;
+    [Header("Health and destruction")]
+    [SerializeField] private float health;
+    [SerializeField] private float damagemultiplier;
+    [SerializeField] private int collisioncap = 2;
+    [SerializeField] private GameObject recover;
 
     [Header("Debug Values")]
     public Collider[] collisions;
@@ -56,7 +56,6 @@ public class CarMovement : MonoBehaviour {
         rb = GetComponent<Rigidbody>();
         StartHealth = health;
 	}
-    bool canTurn;
 
     private void OnTriggerEnter(Collider collision)
     {

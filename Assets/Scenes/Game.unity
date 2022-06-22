@@ -132,8 +132,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 453061831}
+  - component: {fileID: 453061832}
+  - component: {fileID: 453061833}
   m_Layer: 0
-  m_Name: TerrainGenerator
+  m_Name: WorldGenerator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -154,6 +156,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &453061832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 453061830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18071ebfc1aec4628b5ff6536477adac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 2124423600}
+  m_chunkSize: 16
+  generationBoxWidth: 8
+--- !u!114 &453061833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 453061830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2412ee97bc2424bda8ed8658a60aeba8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundPrefab: {fileID: 2159016053821811275, guid: beb073b96b2ba43cda5fe7e1a8393c85, type: 3}
 --- !u!1 &697072647
 GameObject:
   m_ObjectHideFlags: 0
@@ -344,6 +374,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Car
       objectReference: {fileID: 0}
+    - target: {fileID: 9136385964311081293, guid: e8c7314768f6c4ecd91e1acdcaa71c6c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9136385964311081295, guid: e8c7314768f6c4ecd91e1acdcaa71c6c, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -393,5 +427,10 @@ PrefabInstance:
 --- !u!4 &1931668531 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9136385964311081295, guid: e8c7314768f6c4ecd91e1acdcaa71c6c, type: 3}
+  m_PrefabInstance: {fileID: 1931668530}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2124423600 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9136385964311081290, guid: e8c7314768f6c4ecd91e1acdcaa71c6c, type: 3}
   m_PrefabInstance: {fileID: 1931668530}
   m_PrefabAsset: {fileID: 0}
