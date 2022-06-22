@@ -118,8 +118,11 @@ public class carAi : MonoBehaviour
         collisions = Physics.OverlapBox(transform.position, Vector3.Scale(transform.lossyScale, new Vector3(1.1f, 1.1f, 1.1f)));
         max = reversing ? reverseMaxTurnSpeed : maxTurnSpeed;
         turnVel = Tools.LimitSigned(turnVel, max);
-        if (WrapAngle(transform.eulerAngles.x) < MaxAngle && WrapAngle(transform.eulerAngles.x) > -MaxAngle && WrapAngle(transform.eulerAngles.z) < MaxAngle && WrapAngle(transform.eulerAngles.z) > -MaxAngle)
+        if (WrapAngle(transform.eulerAngles.x) < MaxAngle && WrapAngle(transform.eulerAngles.x) > -MaxAngle && WrapAngle(transform.eulerAngles.z) < MaxAngle && WrapAngle(transform.eulerAngles.z) > -MaxAngle && collisions.Length >= 2)
+        {
+            rb.angularVelocity = new Vector3(rb.angularVelocity.x, turnVel, rb.angularVelocity.z); ;
             rb.velocity = vel;
+        }
         else
         {
             if (rb.velocity.magnitude < 1f)
@@ -128,8 +131,6 @@ public class carAi : MonoBehaviour
                 transform.position = new Vector3(transform.position.x, transform.position.y + 0.1f, transform.position.z);
             }
         }
-        if (collisions.Length <= collisioncap) turnVel = 0;
-        rb.angularVelocity = new Vector3(rb.angularVelocity.x, turnVel, rb.angularVelocity.z);
     }
     private static float WrapAngle(float angle)
     {

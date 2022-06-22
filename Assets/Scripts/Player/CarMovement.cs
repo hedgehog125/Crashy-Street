@@ -23,7 +23,13 @@ public class CarMovement : MonoBehaviour {
     [SerializeField] private float reverseMaxTurnSpeed;
     [SerializeField] private int reverseTurnDelay;
 
+    [Header("partical effects")]
+    public GameObject halfway;
+    public GameObject threequarters;
+
     [Header("misc")]
+    public float health;
+    public float damagemultiplier;
     public int collisioncap = 2;
     public GameObject recover;
 
@@ -45,14 +51,31 @@ public class CarMovement : MonoBehaviour {
     private void OnMoveRight(InputValue input) {
         moveRight = input.isPressed;
     }
-
+    float StartHealth;
 	private void Awake() {
         rb = GetComponent<Rigidbody>();
+        StartHealth = health;
 	}
     bool canTurn;
 
-
+    private void OnTriggerEnter(Collider collision)
+    {
+        if(collision.transform.GetComponent<Rigidbody>() != null)
+        {
+            if(collision.tag != "donodamage")health -= damagemultiplier*(rb.velocity.magnitude + collision.transform.GetComponent<Rigidbody>().velocity.magnitude);
+        }
+        else
+        {
+            if (collision.tag != "donodamage") health -= damagemultiplier * rb.velocity.magnitude;
+        }
+    }
     private void FixedUpdate() {
+        //smokeandfire
+        if (health < StartHealth / 2) halfway.SetActive(true);
+        else halfway.SetActive(false);
+        if (health < StartHealth / 4) threequarters.SetActive(true);
+        else threequarters.SetActive(false);
+
         Vector3 vel = rb.velocity;
         float turnVel = rb.angularVelocity.y;
 
@@ -116,9 +139,9 @@ public class CarMovement : MonoBehaviour {
         max = reversing? reverseMaxTurnSpeed : maxTurnSpeed;
         turnVel = Tools.LimitSigned(turnVel, max);
         recover.SetActive(false);
-        if (WrapAngle(transform.eulerAngles.x) < MaxAngle && WrapAngle(transform.eulerAngles.x) > -MaxAngle && WrapAngle(transform.eulerAngles.z) < MaxAngle && WrapAngle(transform.eulerAngles.z) > -MaxAngle)
+        if (WrapAngle(transform.eulerAngles.x) < MaxAngle && WrapAngle(transform.eulerAngles.x) > -MaxAngle && WrapAngle(transform.eulerAngles.z) < MaxAngle && WrapAngle(transform.eulerAngles.z) > -MaxAngle && collisions.Length >= 2)
         {
-            rb.angularVelocity = new Vector3(rb.angularVelocity.x, turnVel, rb.angularVelocity.z);
+            rb.angularVelocity = new Vector3(rb.angularVelocity.x, turnVel, rb.angularVelocity.z); ;
             rb.velocity = vel;
         }
         else
@@ -134,8 +157,9 @@ public class CarMovement : MonoBehaviour {
             }
         }
         
-        
-	}
+
+
+    }
     private static float WrapAngle(float angle)
     {
         angle %= 360;

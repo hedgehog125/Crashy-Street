@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Car
   - movableobjects
+  - donodamage
   layers:
   - Default
   - TransparentFX
