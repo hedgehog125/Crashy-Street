@@ -184,6 +184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   groundPrefab: {fileID: 2159016053821811275, guid: beb073b96b2ba43cda5fe7e1a8393c85, type: 3}
+  grassTilePrefab: {fileID: 2159016053821811275, guid: 148814d68a2074eab893817967e51416, type: 3}
 --- !u!1 &697072647
 GameObject:
   m_ObjectHideFlags: 0
