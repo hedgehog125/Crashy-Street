@@ -5,11 +5,13 @@ TagManager:
   serializedVersion: 2
   tags:
   - Car
+  - movableobjects
+  - donodamage
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - movableobjects
   - Water
   - UI
   - 

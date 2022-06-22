@@ -9,6 +9,8 @@ public class CarMovement : MonoBehaviour {
     [SerializeField] private float maxSpeed;
     [SerializeField] private float reverseAcceleration;
     [SerializeField] private float reverseMaxSpeed;
+    [SerializeField] private float MaxAngle;
+
 
     [Header("Turning slowdown")]
     [SerializeField] private float turningMoveSpeedMaintenance;
@@ -21,7 +23,18 @@ public class CarMovement : MonoBehaviour {
     [SerializeField] private float reverseMaxTurnSpeed;
     [SerializeField] private int reverseTurnDelay;
 
+    [Header("partical effects")]
+    public GameObject halfway;
+    public GameObject threequarters;
 
+    [Header("misc")]
+    public float health;
+    public float damagemultiplier;
+    public int collisioncap = 2;
+    public GameObject recover;
+
+    [Header("Debug Values")]
+    public Collider[] collisions;
     private Rigidbody rb;
 
     private bool moveLeft;
@@ -38,12 +51,31 @@ public class CarMovement : MonoBehaviour {
     private void OnMoveRight(InputValue input) {
         moveRight = input.isPressed;
     }
-
+    float StartHealth;
 	private void Awake() {
         rb = GetComponent<Rigidbody>();
+        StartHealth = health;
 	}
+    bool canTurn;
 
-	private void FixedUpdate() {
+    private void OnTriggerEnter(Collider collision)
+    {
+        if(collision.transform.GetComponent<Rigidbody>() != null)
+        {
+            if(collision.tag != "donodamage")health -= damagemultiplier*(rb.velocity.magnitude + collision.transform.GetComponent<Rigidbody>().velocity.magnitude);
+        }
+        else
+        {
+            if (collision.tag != "donodamage") health -= damagemultiplier * rb.velocity.magnitude;
+        }
+    }
+    private void FixedUpdate() {
+        //smokeandfire
+        if (health < StartHealth / 2) halfway.SetActive(true);
+        else halfway.SetActive(false);
+        if (health < StartHealth / 4) threequarters.SetActive(true);
+        else threequarters.SetActive(false);
+
         Vector3 vel = rb.velocity;
         float turnVel = rb.angularVelocity.y;
 
@@ -52,6 +84,8 @@ public class CarMovement : MonoBehaviour {
 
         if (moveLeft && moveRight) {
             if (! reversing) {
+                rb.velocity = new Vector3(0, 0, 0);
+                rb.angularVelocity = new Vector3(0, 0, 0);
                 reverseDir = Random.Range(0, 2) == 1;
 
                 reversing = true;
@@ -101,11 +135,37 @@ public class CarMovement : MonoBehaviour {
         vel += dir * (reversing? reverseAcceleration : acceleration);
         float max = reversing && reverseTurnTick != 0? reverseMaxSpeed : maxSpeed;
         vel = Tools.LimitXZ(vel, max);
-
+        collisions = Physics.OverlapBox(transform.position,Vector3.Scale(transform.lossyScale,new Vector3(1.1f,1.1f,1.1f)));
         max = reversing? reverseMaxTurnSpeed : maxTurnSpeed;
         turnVel = Tools.LimitSigned(turnVel, max);
+        recover.SetActive(false);
+        if (WrapAngle(transform.eulerAngles.x) < MaxAngle && WrapAngle(transform.eulerAngles.x) > -MaxAngle && WrapAngle(transform.eulerAngles.z) < MaxAngle && WrapAngle(transform.eulerAngles.z) > -MaxAngle && collisions.Length >= 2)
+        {
+            rb.angularVelocity = new Vector3(rb.angularVelocity.x, turnVel, rb.angularVelocity.z); ;
+            rb.velocity = vel;
+        }
+        else
+        {
+            if (rb.velocity.magnitude < 1f)
+            {
+                recover.SetActive(true);
+                if (moveLeft || moveRight)
+                {
+                    transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
+                    transform.position = new Vector3(transform.position.x, transform.position.y + 0.1f, transform.position.z);
+                }
+            }
+        }
+        
 
-        rb.velocity = vel;
-        rb.angularVelocity = new Vector3(rb.angularVelocity.x, turnVel, rb.angularVelocity.z);
-	}
+
+    }
+    private static float WrapAngle(float angle)
+    {
+        angle %= 360;
+        if (angle > 180)
+            return angle - 360;
+
+        return angle;
+    }
 }
