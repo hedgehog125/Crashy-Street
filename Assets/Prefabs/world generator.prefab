@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4609876030259090545
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4609876030259090551}
+  - component: {fileID: 4609876030259090550}
+  m_Layer: 0
+  m_Name: world generator
+  m_TagString: world generator
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4609876030259090551
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4609876030259090545}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 98.74854, y: 103.91405, z: 37.392265}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4609876030259090550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4609876030259090545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc5ba6c709524e04b996e74c5d14b11e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  seed: 4523.654
+  roadpatterns:
+  - {fileID: 7658436344964484173, guid: 153a22d72f358d044b638d62fffb2053, type: 3}
+  - {fileID: 9069903802743389655, guid: 829bdbf76c01036489945b98c3c59d39, type: 3}
+  - {fileID: 6066127662019106667, guid: f98be837f3764fa488263671844e74e4, type: 3}
+  - {fileID: 899436011503628667, guid: 0d0df28f9d5895942b0331cddcc08371, type: 3}
+  - {fileID: 7820929805173534272, guid: fa876acb5db398140b6ce46a9649ada4, type: 3}
+  - {fileID: 7149056012305195689, guid: ba521ac87f5cb5e419ddb3ebed9ad414, type: 3}
+  - {fileID: 7190618982086340424, guid: 42a4ff2a7af42cc4f8fe0f0c24a5835f, type: 3}
+  - {fileID: 2547594647698338976, guid: 02534c87e433dc340b4e6ebb339b2fd2, type: 3}
+  - {fileID: 5522558304873648198, guid: 495e8427f14c81949813da10486fe21d, type: 3}
+  - {fileID: 9069903802743389655, guid: 829bdbf76c01036489945b98c3c59d39, type: 3}
+  posses:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}

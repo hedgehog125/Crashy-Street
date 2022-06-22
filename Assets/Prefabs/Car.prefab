@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8489507480047864617}
   - component: {fileID: 106382430888172012}
   - component: {fileID: 7508137776576392377}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 1.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 2728030379566890624}
   - component: {fileID: 3008031351383409113}
   - component: {fileID: 7265912123187977981}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cylinder.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 3961684143341938581}
   - component: {fileID: 5944454095892948309}
   - component: {fileID: 673447060471487998}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cylinder.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -260,7 +260,7 @@ GameObject:
   - component: {fileID: 1073877116099221346}
   - component: {fileID: 6564817805834405824}
   - component: {fileID: 4337166778935485433}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -343,7 +343,7 @@ GameObject:
   - component: {fileID: 7936898433688459464}
   - component: {fileID: 777969644830056608}
   - component: {fileID: 7241487352795424446}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: threequarters
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -363,7 +363,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9136385964311081295}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: -91.17, y: 0, z: -20.119995}
 --- !u!198 &777969644830056608
 ParticleSystem:
@@ -5155,7 +5155,7 @@ GameObject:
   - component: {fileID: 3084545413346859795}
   - component: {fileID: 6512858843642510873}
   - component: {fileID: 7405530145727856683}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 1.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5238,7 +5238,7 @@ GameObject:
   - component: {fileID: 8558398053206232955}
   - component: {fileID: 7146652288355233110}
   - component: {fileID: 2726487431839151303}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5321,7 +5321,7 @@ GameObject:
   - component: {fileID: 57581295853362450}
   - component: {fileID: 912493894073541195}
   - component: {fileID: 4738574450710543727}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cylinder.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5404,7 +5404,7 @@ GameObject:
   - component: {fileID: 1436017651346605063}
   - component: {fileID: 8604559532558223047}
   - component: {fileID: 3193026054850231916}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cylinder.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5476,88 +5476,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &4125942930503851564
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3870755124463203896}
-  - component: {fileID: 2708430751599864779}
-  - component: {fileID: 2855269934340063517}
-  m_Layer: 5
-  m_Name: Text (Legacy)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &3870755124463203896
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4125942930503851564}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1919767712783379459}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1600, y: 300}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &2708430751599864779
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4125942930503851564}
-  m_CullTransparentMesh: 1
---- !u!114 &2855269934340063517
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4125942930503851564}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 12800000, guid: 4a5891145d45d664c9e8099ae42b5e4d, type: 3}
-    m_FontSize: 50
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 5
-    m_MaxSize: 50
-    m_Alignment: 4
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: 'Recover
-
-    ( press anywhere )'
 --- !u!1 &4216963130551109701
 GameObject:
   m_ObjectHideFlags: 0
@@ -5569,7 +5487,7 @@ GameObject:
   - component: {fileID: 4468380188748203695}
   - component: {fileID: 605724336599187985}
   - component: {fileID: 376307052987319937}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 1.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5652,7 +5570,7 @@ GameObject:
   - component: {fileID: 52716964816279279}
   - component: {fileID: 7469293915787016454}
   - component: {fileID: 4105911061836345627}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5733,7 +5651,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5324576902217052477}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Shit Car
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5773,7 +5691,7 @@ GameObject:
   - component: {fileID: 9049162018775935576}
   - component: {fileID: 317580163636649158}
   - component: {fileID: 8173550165930115097}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5856,7 +5774,7 @@ GameObject:
   - component: {fileID: 2730285861754912272}
   - component: {fileID: 4258188329641965494}
   - component: {fileID: 8709126482490117192}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 1.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5939,7 +5857,7 @@ GameObject:
   - component: {fileID: 5003816904279565032}
   - component: {fileID: 1496255950271302079}
   - component: {fileID: 539445583991613887}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cylinder.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6020,7 +5938,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3190858605608594051}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: car models
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6055,7 +5973,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6528274958982970916}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Blue Bird
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6089,7 +6007,7 @@ GameObject:
   - component: {fileID: 8084347064005381161}
   - component: {fileID: 1834455843982192880}
   - component: {fileID: 1301440214859305110}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: halfway
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6109,7 +6027,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9136385964311081295}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -91.17, y: 0, z: 0}
 --- !u!198 &1834455843982192880
 ParticleSystem:
@@ -10901,7 +10819,7 @@ GameObject:
   - component: {fileID: 3982244487225864053}
   - component: {fileID: 2378215451380911361}
   - component: {fileID: 615559882879026075}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10973,107 +10891,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &7046007460147934914
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1919767712783379459}
-  - component: {fileID: 1859461989247610766}
-  - component: {fileID: 8608811226420070762}
-  - component: {fileID: 1844704700836164612}
-  m_Layer: 5
-  m_Name: recover
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1919767712783379459
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7046007460147934914}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 3870755124463203896}
-  m_Father: {fileID: 9136385964311081295}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
---- !u!223 &1859461989247610766
-Canvas:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7046007460147934914}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_RenderMode: 1
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
-  m_ReceivesEvents: 1
-  m_OverrideSorting: 0
-  m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_TargetDisplay: 0
---- !u!114 &8608811226420070762
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7046007460147934914}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
-  m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
-  m_PhysicalUnit: 3
-  m_FallbackScreenDPI: 96
-  m_DefaultSpriteDPI: 96
-  m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
---- !u!114 &1844704700836164612
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7046007460147934914}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
 --- !u!1 &7473752275405555733
 GameObject:
   m_ObjectHideFlags: 0
@@ -11083,7 +10900,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7850841451228336815}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: subaru
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11126,7 +10943,7 @@ GameObject:
   - component: {fileID: 2692583894018000801}
   - component: {fileID: 9119726298217831563}
   - component: {fileID: 4893178478383204003}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Car10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11209,7 +11026,7 @@ GameObject:
   - component: {fileID: 6946336479503745402}
   - component: {fileID: 3590701601225533997}
   - component: {fileID: 2480082795292789293}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cylinder.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11292,7 +11109,7 @@ GameObject:
   - component: {fileID: 9074564754909987048}
   - component: {fileID: 4669592215653918978}
   - component: {fileID: 3637890976558293287}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 1.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11375,7 +11192,7 @@ GameObject:
   - component: {fileID: 1320890099874909415}
   - component: {fileID: 294535617006710419}
   - component: {fileID: 3286942443390984201}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11458,7 +11275,7 @@ GameObject:
   - component: {fileID: 9136385963820302220}
   - component: {fileID: 9136385963820302222}
   - component: {fileID: 9136385963820302221}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Front
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11546,7 +11363,7 @@ GameObject:
   - component: {fileID: 9136385964311081283}
   - component: {fileID: 3643367408283695728}
   - component: {fileID: 5918201372154103498}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Car
   m_TagString: Car
   m_Icon: {fileID: 0}
@@ -11566,7 +11383,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3190858605608594051}
-  - {fileID: 1919767712783379459}
   - {fileID: 8084347064005381161}
   - {fileID: 7936898433688459464}
   m_Father: {fileID: 0}
@@ -11599,9 +11415,14 @@ MonoBehaviour:
   halfway: {fileID: 6166662217648615006}
   threequarters: {fileID: 3317287679690879212}
   health: 100
+  healthslider: {fileID: 0}
   damagemultiplier: 0.5
   collisioncap: 3
-  recover: {fileID: 4125942930503851564}
+  recover: {fileID: 0}
+  dead: 0
+  deadT: {fileID: 0}
+  money: 0
+  moneytext: {fileID: 0}
   collisions: []
 --- !u!114 &9136385964311081281
 MonoBehaviour:
@@ -11716,7 +11537,7 @@ GameObject:
   - component: {fileID: 9136385965211017095}
   - component: {fileID: 9136385965211017081}
   - component: {fileID: 9136385965211017080}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Red Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}

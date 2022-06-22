@@ -1,22 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Wgen : MonoBehaviour
 {
     public GameObject player;
+    public NavMeshSurface surface;
     public float seed;
     public GameObject[] roadpatterns;
     public Vector3[] posses = new Vector3[9];
     // Start is called before the first frame update
     void Start()
     {
-        
+        seed = Random.Range(1000f, 10000f);
     }
 
     // Update is called once per frame
+    Vector3 prevvec;
     void Update()
     {
+        
         int i = 0;
         var vec = player.transform.position;
         vec.x = Mathf.Round(vec.x / 60) * 60;
@@ -55,5 +59,11 @@ public class Wgen : MonoBehaviour
             string jonathan = $"{joe[5]}";
             if (!inpatterns) Instantiate(roadpatterns[int.Parse(jonathan)], vectors, transform.rotation);
         }
+        if (vec != prevvec)
+        {
+            Debug.Log("buildnav");
+            surface.BuildNavMesh();
+        }
+        prevvec = vec;
     }
 }

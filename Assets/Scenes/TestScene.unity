@@ -1367,7 +1367,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1083673307868596604, guid: c50eb4b3cc7fb427d977b991f0393a1e, type: 3}
       propertyPath: field of view
-      value: 40
+      value: 33.398483
       objectReference: {fileID: 0}
     - target: {fileID: 1083673307868596607, guid: c50eb4b3cc7fb427d977b991f0393a1e, type: 3}
       propertyPath: m_LocalPosition.x

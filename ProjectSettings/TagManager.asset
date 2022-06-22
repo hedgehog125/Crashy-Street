@@ -16,8 +16,8 @@ TagManager:
   - movableobjects
   - Water
   - UI
-  - 
-  - 
+  - Dontbake
+  - only interact with raycast
   - 
   - 
   - 

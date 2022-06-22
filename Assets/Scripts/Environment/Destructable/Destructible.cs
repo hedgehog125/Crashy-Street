@@ -11,9 +11,11 @@ public class Destructible : MonoBehaviour {
     [Header("Explosion")]
     [SerializeField] private float explosionRadius;
     [SerializeField] private float explosionForce;
+    [SerializeField] private float explosionDamage;
 
     [Header("")]
     [SerializeField] private float breakThreshold;
+    [SerializeField] private int cost;
 
     private Rigidbody rb;
     private Vector3 lastVel;
@@ -31,7 +33,7 @@ public class Destructible : MonoBehaviour {
 
     private void Break() {
         if (explosionPrefab != null) {
-            Instantiate(explosionPrefab, transform.position, transform.rotation);
+            GameObject prefab = Instantiate(explosionPrefab, transform.position, transform.rotation);
 		}
         if (explosionSound != null) explosionSound.Play();
 
@@ -45,6 +47,11 @@ public class Destructible : MonoBehaviour {
     private void Explode() {
         Collider[] affectedObs = Physics.OverlapSphere(transform.position, explosionRadius);
         foreach (Collider ob in affectedObs) {
+            if(ob.transform.tag == "Car")
+            {
+                ob.GetComponent<CarMovement>().health -= explosionDamage/4;
+                ob.GetComponent<CarMovement>().money += cost/4;
+            }
             if (ob.gameObject == gameObject) continue;
 
             Rigidbody obRb = ob.GetComponent<Rigidbody>();
