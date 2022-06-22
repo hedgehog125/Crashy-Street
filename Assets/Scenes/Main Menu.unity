@@ -506,6 +506,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveLeft: 0
   moveRight: 0
+  mainmenu: 1
 --- !u!114 &1005858104
 MonoBehaviour:
   m_ObjectHideFlags: 0

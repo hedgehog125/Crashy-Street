@@ -17,7 +17,6 @@ public class Wgen : MonoBehaviour
     }
 
     // Update is called once per frame
-    Vector3 prevvec;
     void Update()
     {
         
@@ -59,11 +58,5 @@ public class Wgen : MonoBehaviour
             string jonathan = $"{joe[5]}";
             if (!inpatterns) Instantiate(roadpatterns[int.Parse(jonathan)], vectors, transform.rotation);
         }
-        if (vec != prevvec)
-        {
-            Debug.Log("buildnav");
-            surface.BuildNavMesh();
-        }
-        prevvec = vec;
     }
 }
