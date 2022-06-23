@@ -276,13 +276,13 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1802755497}
-  m_RootOrder: 1
+  m_Father: {fileID: 1923243853}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -520, y: 0}
-  m_SizeDelta: {x: 1000, y: 374}
+  m_AnchoredPosition: {x: -1230, y: -18.363312}
+  m_SizeDelta: {x: 977.7861, y: 337.2734}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &720410042
 MonoBehaviour:
@@ -311,7 +311,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 6
     m_MaxSize: 70
-    m_Alignment: 5
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -356,13 +356,13 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1802755497}
-  m_RootOrder: 2
+  m_Father: {fileID: 1823571431}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 520, y: 0}
-  m_SizeDelta: {x: 1000, y: 374}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -1230, y: -18.363312}
+  m_SizeDelta: {x: 977.7861, y: 337.2734}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &912848745
 MonoBehaviour:
@@ -940,7 +940,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1923243853}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1092,10 +1092,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1280, y: 720}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -1137,10 +1137,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1937025074}
-  - {fileID: 720410041}
-  - {fileID: 912848744}
-  - {fileID: 1823571431}
   - {fileID: 1923243853}
+  - {fileID: 1823571431}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1162,7 +1160,7 @@ GameObject:
   - component: {fileID: 1823571433}
   - component: {fileID: 1823571432}
   m_Layer: 5
-  m_Name: LEFT
+  m_Name: carselect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1181,13 +1179,14 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1465026304}
+  - {fileID: 912848744}
   m_Father: {fileID: 1802755497}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1122.2947, y: -495.15637}
-  m_SizeDelta: {x: 2004.5892, y: 2192.3535}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 120, y: -300}
+  m_SizeDelta: {x: 2004.5892, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1823571432
 MonoBehaviour:
@@ -1296,7 +1295,7 @@ GameObject:
   - component: {fileID: 1923243855}
   - component: {fileID: 1923243854}
   m_Layer: 5
-  m_Name: RIGHT
+  m_Name: play
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1314,14 +1313,15 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 720410041}
   - {fileID: 1788610537}
   m_Father: {fileID: 1802755497}
-  m_RootOrder: 4
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1122.2952, y: -495.15637}
-  m_SizeDelta: {x: 2004.5892, y: 2192.3535}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 119.99999, y: -103}
+  m_SizeDelta: {x: 2004.5892, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1923243854
 MonoBehaviour:

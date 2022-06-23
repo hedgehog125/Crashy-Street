@@ -11453,7 +11453,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   acceleration: 1
-  maxSpeed: 3.5
+  maxSpeed: 5
   reverseAcceleration: 0.5
   reverseMaxSpeed: 10
   MaxAngle: 60
@@ -11563,10 +11563,10 @@ MonoBehaviour:
   turnaccs: []
   accs: []
   speeds: []
-  unlockcost: 1800
-  turncost: 3600
-  speedcost: 3600
-  acccost: 5400
+  unlockcost: 360
+  turncost: 120
+  speedcost: 100
+  acccost: 150
   turnacc: 0
   acc: 0
   speed: 0

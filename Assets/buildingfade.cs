@@ -29,13 +29,13 @@ public class buildingfade : MonoBehaviour
         {
             foreach (Transform t in building.transform)
             {
-                t.gameObject.SetActive(true);
+                t.gameObject.GetComponent<MeshRenderer>().enabled = true;
             }
             if (Mathf.RoundToInt(building.transform.position.x) == Mathf.RoundToInt(pos.x) && Mathf.RoundToInt(building.transform.position.z) == Mathf.RoundToInt(pos.z))
             {
                 foreach(Transform t in building.transform)
                 {
-                    t.gameObject.SetActive(false);
+                    t.gameObject.GetComponent<MeshRenderer>().enabled = false;
                 }
             }
         }

@@ -36,13 +36,13 @@ public class CarChange : MonoBehaviour
     void Start()
     {
         car = PlayerPrefs.GetInt("SelectedCar", 0);
-        turnacc = PlayerPrefs.GetInt("turnacc", 1);
-        acc = PlayerPrefs.GetInt("acc", 1);
-        speed = PlayerPrefs.GetInt("speed", 2);
-        maxturnacc = PlayerPrefs.GetInt("maxturnacc", 1);
-        maxacc = PlayerPrefs.GetInt("maxacc", 1);
-        maxspeed = PlayerPrefs.GetInt("maxspeed", 2);
-        unlocked = PlayerPrefs.GetInt("unlocked", 1);
+        turnacc = PlayerPrefs.GetInt("turnacc", 4);
+        acc = PlayerPrefs.GetInt("acc", 4);
+        speed = PlayerPrefs.GetInt("speed", 8);
+        maxturnacc = PlayerPrefs.GetInt("maxturnacc", 4);
+        maxacc = PlayerPrefs.GetInt("maxacc", 4);
+        maxspeed = PlayerPrefs.GetInt("maxspeed", 8);
+        unlocked = PlayerPrefs.GetInt("unlocked", 4);
         PlayerPrefs.SetInt("SelectedCar", car);
         PlayerPrefs.SetInt("turnacc", turnacc);
         PlayerPrefs.SetInt("acc", acc);
@@ -150,12 +150,12 @@ public class CarChange : MonoBehaviour
     {
         if (reset)
         {
-            PlayerPrefs.SetInt("speed", 2);
-            PlayerPrefs.SetInt("turnacc", 1);
-            PlayerPrefs.SetInt("acc", 1);
-            PlayerPrefs.SetInt("maxspeed", 2);
-            PlayerPrefs.SetInt("maxturnacc", 1);
-            PlayerPrefs.SetInt("maxacc", 1);
+            PlayerPrefs.SetInt("speed", 8);
+            PlayerPrefs.SetInt("turnacc", 4);
+            PlayerPrefs.SetInt("acc", 4);
+            PlayerPrefs.SetInt("maxspeed", 8);
+            PlayerPrefs.SetInt("maxturnacc", 4);
+            PlayerPrefs.SetInt("maxacc", 4);
             PlayerPrefs.SetInt("unlocked", 1);
         }
         

@@ -54,6 +54,7 @@ MonoBehaviour:
   explosionForce: 0
   explosionDamage: 0
   breakThreshold: 10
+  cost: 10
 --- !u!54 &4141400507508398631
 Rigidbody:
   m_ObjectHideFlags: 0
