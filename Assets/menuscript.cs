@@ -6,17 +6,7 @@ using UnityEngine.InputSystem;
 
 public class menuscript : MonoBehaviour
 {
-    public bool moveLeft;
-    public bool moveRight;
     public bool mainmenu;
-    private void OnMoveLeft(InputValue input)
-    {
-        moveLeft = input.isPressed;
-    }
-    private void OnMoveRight(InputValue input)
-    {
-        moveRight = input.isPressed;
-    }
     // Start is called before the first frame update
     void Start()
     {
@@ -28,21 +18,6 @@ public class menuscript : MonoBehaviour
         enabled = true;
     }
     // Update is called once per frame
-    void Update()
-    {
-        if (enabled && mainmenu)
-        {
-            if (moveLeft)
-            {
-                LoadScene("Car Select");
-            }
-            if (moveRight)
-            {
-                LoadScene("Jacks Generation");
-            }
-        }
-        
-    }
     public void LoadScene(string scene)
     {
         SceneManager.LoadScene(scene);

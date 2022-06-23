@@ -7,8 +7,8 @@ using UnityEngine.InputSystem;
 public class CarChange : MonoBehaviour
 {
     public GameObject carhold;
-    private bool moveLeft;
-    private bool moveRight;
+    public bool moveLeft;
+    public bool moveRight;
     public int car;
     public Text txt;
     public bool menu;
@@ -35,13 +35,21 @@ public class CarChange : MonoBehaviour
         ChangeCar();
     }
 
-    private void OnMoveLeft(InputValue input)
+    public void MoveLeft()
     {
-        moveLeft = input.isPressed;
+        moveLeft = true;
     }
-    private void OnMoveRight(InputValue input)
+    public void NotMoveLeft()
     {
-        moveRight = input.isPressed;
+        moveLeft = false;
+    }
+    public void MoveRight()
+    {
+        moveRight = true;
+    }
+    public void NotMoveRight()
+    {
+        moveRight = false;
     }
     bool prevleft;
     bool prevright;

@@ -54,11 +54,20 @@ public class CarMovement : MonoBehaviour {
     private int reverseTurnTick;
     private int turningSlowdownTick;
 
-    private void OnMoveLeft(InputValue input) {
-        moveLeft = input.isPressed;
+    public void MoveLeft() {
+        moveLeft = true;
     }
-    private void OnMoveRight(InputValue input) {
-        moveRight = input.isPressed;
+    public void NotMoveLeft()
+    {
+        moveLeft = false;
+    }
+    public void MoveRight()
+    {
+        moveRight = true;
+    }
+    public void NotMoveRight()
+    {
+        moveRight = false;
     }
     float StartHealth;
 	private void Awake() {

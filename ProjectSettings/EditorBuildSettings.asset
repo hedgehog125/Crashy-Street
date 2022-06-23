@@ -6,12 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Main Menu.unity
+    guid: 1387b150dc4942946b6e764ae9d038b6
+  - enabled: 1
     path: Assets/Scenes/Jacks Generation.unity
     guid: 6ad08a2820bb7c5438d5bc1532d5b9cd
   - enabled: 1
     path: Assets/Scenes/Car Select.unity
     guid: 2c24efd71faca04439e1bc4781a68be8
-  - enabled: 1
-    path: Assets/Scenes/Main Menu.unity
-    guid: 1387b150dc4942946b6e764ae9d038b6
   m_configObjects: {}
