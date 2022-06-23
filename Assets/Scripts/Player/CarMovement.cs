@@ -95,7 +95,7 @@ public class CarMovement : MonoBehaviour {
     {
         while (true && !dead)
         {
-            money += 1;
+            money += Mathf.RoundToInt(1*(rb.velocity.magnitude/10));
             yield return new WaitForSeconds(1);
         }
     }

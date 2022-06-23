@@ -42,7 +42,7 @@ public class CarChange : MonoBehaviour
         maxturnacc = PlayerPrefs.GetInt("maxturnacc", 4);
         maxacc = PlayerPrefs.GetInt("maxacc", 4);
         maxspeed = PlayerPrefs.GetInt("maxspeed", 8);
-        unlocked = PlayerPrefs.GetInt("unlocked", 4);
+        unlocked = PlayerPrefs.GetInt("unlocked", 1);
         PlayerPrefs.SetInt("SelectedCar", car);
         PlayerPrefs.SetInt("turnacc", turnacc);
         PlayerPrefs.SetInt("acc", acc);
