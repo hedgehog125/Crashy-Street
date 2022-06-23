@@ -82,7 +82,7 @@ public class CarChange : MonoBehaviour
         if (PlayerPrefs.GetInt("money", 0) >= turncost)
         {
             maxturnacc += 1;
-            if (maxturnacc > 4) maxturnacc = 4;
+            if (maxturnacc > 16) maxturnacc = 16;
             PlayerPrefs.SetInt("money", PlayerPrefs.GetInt("money", 0)-turncost);
         }
         PlayerPrefs.SetInt("maxturnacc", maxturnacc);
@@ -92,7 +92,7 @@ public class CarChange : MonoBehaviour
         if (PlayerPrefs.GetInt("money", 0) >= speedcost)
         {
             maxspeed += 1;
-            if (maxspeed > 4) maxspeed = 4;
+            if (maxspeed > 16) maxspeed = 16;
             PlayerPrefs.SetInt("money", PlayerPrefs.GetInt("money", 0) - speedcost);
         }
         PlayerPrefs.SetInt("maxspeed", maxspeed);
@@ -102,7 +102,7 @@ public class CarChange : MonoBehaviour
         if (PlayerPrefs.GetInt("money", 0) >= acccost)
         {
             maxacc += 1;
-            if (maxacc > 4) maxacc = 4;
+            if (maxacc > 16) maxacc = 16;
             PlayerPrefs.SetInt("money", PlayerPrefs.GetInt("money", 0) - acccost);
         }
         PlayerPrefs.SetInt("maxacc", maxacc);
@@ -112,7 +112,7 @@ public class CarChange : MonoBehaviour
         if (turnacc + amount != maxturnacc + 1 && turnacc + amount > 0)
         {
             turnacc += amount;
-            if (turnacc > 4) turnacc = 4;
+            if (turnacc > 16) turnacc = 16;
         }
         PlayerPrefs.SetInt("turnacc", turnacc);
     }
@@ -121,7 +121,7 @@ public class CarChange : MonoBehaviour
         if (speed+amount != maxspeed+1&&speed+amount>0)
         {
             speed += amount;
-            if (speed > 4) speed = 4;
+            if (speed > 16) speed = 16;
         }
         PlayerPrefs.SetInt("speed", speed);
     }
@@ -130,7 +130,7 @@ public class CarChange : MonoBehaviour
         if (acc + amount != maxacc + 1 && acc + amount > 0)
         {
             acc += amount;
-            if (acc > 4) acc = 4;
+            if (acc > 16) acc = 16;
         }
         PlayerPrefs.SetInt("acc", acc);
     }
@@ -165,11 +165,11 @@ public class CarChange : MonoBehaviour
             try
             {
                 speeds[1].value = speed;
-                speeds[0].value = 4 - maxspeed;
+                speeds[0].value = 16 - maxspeed;
                 turnaccs[1].value = turnacc;
-                turnaccs[0].value = 4 - maxturnacc;
+                turnaccs[0].value = 16 - maxturnacc;
                 accs[1].value = acc;
-                accs[0].value = 4 - maxacc;
+                accs[0].value = 16 - maxacc;
                 elmoney.text = $"{PlayerPrefs.GetInt("money", 0)}";
             }
             catch {

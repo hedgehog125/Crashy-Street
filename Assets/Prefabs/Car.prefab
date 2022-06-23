@@ -11453,7 +11453,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   acceleration: 1
-  maxSpeed: 5
+  maxSpeed: 1.25
   reverseAcceleration: 0.5
   reverseMaxSpeed: 10
   MaxAngle: 60
