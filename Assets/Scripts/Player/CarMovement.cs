@@ -7,8 +7,8 @@ using UnityEngine.InputSystem;
 
 public class CarMovement : MonoBehaviour {
     [Header("Movement")]
-    [SerializeField] private float acceleration;
-    [SerializeField] private float maxSpeed;
+    [SerializeField] public float acceleration;
+    [SerializeField] public float maxSpeed;
     [SerializeField] private float reverseAcceleration;
     [SerializeField] private float reverseMaxSpeed;
     [SerializeField] private float MaxAngle;
@@ -19,7 +19,7 @@ public class CarMovement : MonoBehaviour {
     [SerializeField] private int turningSlowdownTime;
 
     [Header("Turning")]
-    [SerializeField] private float turnAcceleration;
+    [SerializeField] public float turnAcceleration;
     [SerializeField] private float reverseTurnAcceleration;
     [SerializeField] private float maxTurnSpeed;
     [SerializeField] private float reverseMaxTurnSpeed;
@@ -93,7 +93,7 @@ public class CarMovement : MonoBehaviour {
     }
     private IEnumerator moneyloop()
     {
-        while (true)
+        while (true && !dead)
         {
             money += 1;
             yield return new WaitForSeconds(1);
