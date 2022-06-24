@@ -10,6 +10,7 @@ TagManager:
   - roadpattern
   - world generator
   - building
+  - aicar
   layers:
   - Default
   - TransparentFX
@@ -19,9 +20,9 @@ TagManager:
   - UI
   - Dontbake
   - building
-  - 
-  - 
-  - 
+  - policecar
+  - buildingnotcollide
+  - plane
   - 
   - 
   - 

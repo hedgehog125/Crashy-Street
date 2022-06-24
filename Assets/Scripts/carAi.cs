@@ -24,6 +24,7 @@ public class carAi : MonoBehaviour
     [SerializeField] private int reverseTurnDelay;
 
     [Header("misc")]
+    public float maxdistance;
     public int collisioncap = 2;
     public GameObject pointer;
     public GameObject agent;
@@ -51,10 +52,8 @@ public class carAi : MonoBehaviour
         pointer.GetComponent<lockonandlookat>().lookat = agent;
         Vector3 vel = rb.velocity;
         float turnVel = rb.angularVelocity.y;
-
         Vector3 dir = transform.forward;
         dir.y = 0; // No flying
-
         if (pointer.transform.localEulerAngles.y<255&& pointer.transform.localEulerAngles.y > 105)
         {
             if (!reversing)

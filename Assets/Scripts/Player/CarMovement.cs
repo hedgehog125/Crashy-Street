@@ -100,6 +100,10 @@ public class CarMovement : MonoBehaviour {
         }
     }
     private void FixedUpdate() {
+        if(rb.velocity.magnitude < 1)
+        {
+            health -= Time.deltaTime;
+        }
         healthslider.value = health;
         moneytext.text = $"{money}";
         if(health <= 0)

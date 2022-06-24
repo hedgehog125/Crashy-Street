@@ -12015,7 +12015,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7850841451228336815
 Transform:
   m_ObjectHideFlags: 0
@@ -12846,14 +12846,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b45872ad1aa64a3eb5b91ac1faf4eff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  acceleration: 1
+  acceleration: 0.25
   maxSpeed: 1.25
   reverseAcceleration: 0.5
   reverseMaxSpeed: 10
   MaxAngle: 60
   turningMoveSpeedMaintenance: 1
   turningSlowdownTime: 3
-  turnAcceleration: 0.75
+  turnAcceleration: 0.1875
   reverseTurnAcceleration: 0.5
   maxTurnSpeed: 2.5
   reverseMaxTurnSpeed: 5

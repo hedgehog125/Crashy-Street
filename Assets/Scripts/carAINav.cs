@@ -32,23 +32,53 @@ public class carAINav : MonoBehaviour
     private int reverseTurnTick;
     private int turningSlowdownTick;
 
-    public GameObject player;
+    [Header("ai stuff")]
+    public float maxdistance;
+    public float deletey;
+    GameObject player;
+    public NavMeshAgent target;
     public GameObject pointer;
     public Quaternion thecodemaster;
+
+    [Header("debug values")]
+    public LineRenderer lineRenderer;
 
     Rigidbody rb;
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Car");
         rb = GetComponent<Rigidbody>();
         maxSpeed *= PlayerPrefs.GetInt("speed", 2);
     }
     // Update is called once per frame
     void FixedUpdate()
     {
+        if(transform.position.y < -deletey || transform.position.y > deletey)
+        {
+            Destroy(this.gameObject);
+        }
+        if (Vector3.Distance(player.transform.position, transform.position) > maxdistance)
+        {
+            this.gameObject.layer = 9;
+        }
+        else
+        {
+            this.gameObject.layer = 8;
+        }
         NavMeshPath path = new NavMeshPath();
-        NavMesh.CalculatePath(transform.position, player.transform.position, NavMesh.AllAreas, path);
-        try { pointer.transform.LookAt(path.corners[1]); }
-        catch { pointer.transform.LookAt(player.transform.position); }
+        NavMesh.CalculatePath(player.transform.position, player.transform.position, NavMesh.AllAreas, path);
+        try 
+        { 
+            pointer.transform.LookAt(path.corners[1]);
+            lineRenderer.positionCount = path.corners.Length;
+            lineRenderer.SetPositions(path.corners);
+            lineRenderer.enabled = true;
+        }
+        catch 
+        {
+            pointer.transform.LookAt(player.transform.position);
+            lineRenderer.enabled = false;
+        }
         if(pointer.transform.localEulerAngles.y > 255)
         {
             moveLeft = true;

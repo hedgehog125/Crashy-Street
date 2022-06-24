@@ -136,13 +136,17 @@ public class CarChange : MonoBehaviour
     }
     public void nextcar()
     {
-        if (PlayerPrefs.GetInt("unlocked", 1) + 1 <= childcount)
+        if(PlayerPrefs.GetInt("money") >= unlockcost)
         {
-            PlayerPrefs.SetInt("unlocked", PlayerPrefs.GetInt("unlocked", 1) + 1);
-            PlayerPrefs.SetInt("money", PlayerPrefs.GetInt("money", 0) - unlockcost);
+            if (PlayerPrefs.GetInt("unlocked", 1) + 1 <= childcount)
+            {
+                PlayerPrefs.SetInt("unlocked", PlayerPrefs.GetInt("unlocked", 1) + 1);
+                PlayerPrefs.SetInt("money", PlayerPrefs.GetInt("money", 0) - unlockcost);
+            }
+
+            unlocked = PlayerPrefs.GetInt("unlocked", 1);
         }
-            
-        unlocked = PlayerPrefs.GetInt("unlocked", 1);
+        
     }
     bool prevleft;
     bool prevright;
