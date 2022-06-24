@@ -692,6 +692,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1126822942}
     - target: {fileID: 9136385964311081280, guid: e8c7314768f6c4ecd91e1acdcaa71c6c, type: 3}
+      propertyPath: health
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 9136385964311081280, guid: e8c7314768f6c4ecd91e1acdcaa71c6c, type: 3}
       propertyPath: recover
       value: 
       objectReference: {fileID: 1009095343}
@@ -1166,6 +1170,7 @@ MonoBehaviour:
   difficulty: 2
   enemys:
   - {fileID: 1724266455087002151, guid: 55099f4ac5d01564cbfb3d527bb4c749, type: 3}
+  - {fileID: 2830141225234060449, guid: 54b016a90c73e7e4483df54e8bfdd8fc, type: 3}
   mult:
   - 0
   - 0

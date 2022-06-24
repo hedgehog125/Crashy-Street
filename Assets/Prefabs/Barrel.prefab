@@ -50,10 +50,16 @@ MonoBehaviour:
   brokenPrefab: {fileID: 4488744515867991349, guid: d3d82d805a07248cea8aba3145471b96, type: 3}
   explosionPrefab: {fileID: 129503278523693062, guid: 08cf17e298a99384abe8dff17fb2d75e, type: 3}
   explosionSound: {fileID: 0}
+  layers:
+    serializedVersion: 2
+    m_Bits: 1919
+  explodeonimpact: 0
   explosionRadius: 7
   explosionForce: 500
   explosionDamage: 20
+  impactbox: {x: 0.5, y: 0.5, z: 0.5}
   breakThreshold: 7.5
+  cost: 0
 --- !u!65 &1464264632736687430
 BoxCollider:
   m_ObjectHideFlags: 0

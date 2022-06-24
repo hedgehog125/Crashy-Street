@@ -41,7 +41,7 @@ public class carAINav : MonoBehaviour
     public Quaternion thecodemaster;
 
     [Header("debug values")]
-    public LineRenderer lineRenderer;
+
 
     Rigidbody rb;
     void Start()
@@ -66,18 +66,16 @@ public class carAINav : MonoBehaviour
             this.gameObject.layer = 8;
         }
         NavMeshPath path = new NavMeshPath();
-        NavMesh.CalculatePath(player.transform.position, player.transform.position, NavMesh.AllAreas, path);
+        NavMesh.CalculatePath(transform.position, player.transform.position, NavMesh.AllAreas, path);
         try 
         { 
             pointer.transform.LookAt(path.corners[1]);
-            lineRenderer.positionCount = path.corners.Length;
-            lineRenderer.SetPositions(path.corners);
-            lineRenderer.enabled = true;
+
         }
         catch 
         {
             pointer.transform.LookAt(player.transform.position);
-            lineRenderer.enabled = false;
+
         }
         if(pointer.transform.localEulerAngles.y > 255)
         {

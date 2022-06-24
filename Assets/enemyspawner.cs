@@ -19,7 +19,6 @@ public class enemyspawner : MonoBehaviour
         while (true)
         {
             GameObject[] objects = GameObject.FindGameObjectsWithTag("aicar");
-            Debug.Log(objects.Length);
             var vec = player.transform.position;
             vec.x = Mathf.Round(vec.x / 60) * 60;
             vec.y = Mathf.Round(vec.y / 60) * 60;
@@ -29,9 +28,11 @@ public class enemyspawner : MonoBehaviour
             
             if (objects.Length < difficulty)
             {
-                GameObject jeff = Instantiate(enemys[Random.Range(0,enemys.Length-1)],new Vector3(vec.x+mult[Random.Range(0,1)]*70, 0.6f,vec.z + mult[Random.Range(0, 1)] * 70),transform.rotation);
+                int random = Random.Range(0, 2);
+                Debug.Log(random);
+                GameObject jeff = Instantiate(enemys[random],new Vector3(vec.x+mult[Random.Range(0,1)]*70, enemys[random].transform.position.y, vec.z + mult[Random.Range(0, 1)] * 70),transform.rotation);
                 jeff.transform.LookAt(player.transform.position);
-                jeff.GetComponent<Rigidbody>().velocity = jeff.transform.forward*2;
+                try { jeff.GetComponent<Rigidbody>().velocity = jeff.transform.forward * 2; } catch { }
             }
             int corner;
 

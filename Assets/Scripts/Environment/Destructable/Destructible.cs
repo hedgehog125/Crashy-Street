@@ -7,11 +7,14 @@ public class Destructible : MonoBehaviour {
     [SerializeField] private GameObject brokenPrefab;
     [SerializeField] private GameObject explosionPrefab;
     [SerializeField] private AudioSource explosionSound;
+    public LayerMask layers;
 
     [Header("Explosion")]
+    public bool explodeonimpact;
     [SerializeField] private float explosionRadius;
     [SerializeField] private float explosionForce;
     [SerializeField] private float explosionDamage;
+    [SerializeField] private Vector3 impactbox;
 
     [Header("")]
     [SerializeField] private float breakThreshold;
@@ -25,10 +28,25 @@ public class Destructible : MonoBehaviour {
 	}
 
 	private void FixedUpdate() {
-        float acceleration = (lastVel - rb.velocity).magnitude;
-        if (acceleration >= breakThreshold) Break();
+        if (!explodeonimpact)
+        {
+            float acceleration = (lastVel - rb.velocity).magnitude;
+            if (acceleration >= breakThreshold) Break();
 
-        if (rb.velocity.magnitude >= breakThreshold) Break();
+            if (rb.velocity.magnitude >= breakThreshold) Break();
+        }
+        else
+        {
+            Collider[] hits = Physics.OverlapBox(transform.position,impactbox,Quaternion.identity,layers);
+            Debug.Log(hits);
+            if (hits.Length > 1)
+            {
+                Break();
+                Instantiate(brokenPrefab, transform.position, transform.rotation);
+                Destroy(gameObject);
+                Explode();
+            }
+        }
     }
 
     private void Break() {
@@ -61,4 +79,5 @@ public class Destructible : MonoBehaviour {
             }
         }
     }
+
 }
