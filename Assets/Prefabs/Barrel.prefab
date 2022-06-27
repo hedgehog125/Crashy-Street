@@ -54,7 +54,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1919
   explodeonimpact: 0
-  explosionRadius: 7
+  explosionRadius: 5
   explosionForce: 500
   explosionDamage: 20
   impactbox: {x: 0.5, y: 0.5, z: 0.5}
