@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using UnityEngine.InputSystem;
 
 public class CarMovement : MonoBehaviour {
     [Header("Movement")]
@@ -46,14 +45,13 @@ public class CarMovement : MonoBehaviour {
     public Collider[] collisions;
     private Rigidbody rb;
 
-    private bool moveLeft;
-    private bool moveRight;
+    public bool moveLeft;
+    public bool moveRight;
 
     private bool reversing;
     private bool reverseDir;
     private int reverseTurnTick;
     private int turningSlowdownTick;
-
     public void MoveLeft() {
         moveLeft = true;
     }
@@ -100,7 +98,7 @@ public class CarMovement : MonoBehaviour {
         }
     }
     private void FixedUpdate() {
-        if(rb.velocity.magnitude < 1)
+        if (rb.velocity.magnitude < 1)
         {
             health -= Time.deltaTime;
         }

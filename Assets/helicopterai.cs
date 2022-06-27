@@ -8,7 +8,9 @@ public class helicopterai : MonoBehaviour
     public float speed;
     public float launchspeed;
     public float destroyY;
+    public float rotationspeed;
     public GameObject barrel;
+    public GameObject direction;
     public Transform helimodel;
     GameObject player;
     Vector3 startingpos;
@@ -34,7 +36,8 @@ public class helicopterai : MonoBehaviour
             Vector3 target;
             if (NavMesh.CalculatePath(player.transform.position, player.transform.position, NavMesh.AllAreas, path))
             {
-                target = path.corners[0];
+                try { target = path.corners[1]; }
+                catch { target = player.transform.position; }
             }
             else
             {
@@ -66,8 +69,8 @@ public class helicopterai : MonoBehaviour
                 target = startingpos;
             }
             target.y = transform.position.y;
-            transform.LookAt(target+new Vector3(0,20,0));
-
+            direction.transform.LookAt(target+new Vector3(0,20,0));
+            transform.eulerAngles = Vector3.Lerp(transform.eulerAngles, direction.transform.eulerAngles, rotationspeed);
             transform.position += transform.forward * speed * Time.deltaTime;
         }
     }

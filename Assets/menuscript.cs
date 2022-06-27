@@ -10,6 +10,7 @@ public class menuscript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        QualitySettings.resolutionScalingFixedDPIFactor = PlayerPrefs.GetFloat("targetdpi", 1);
         Invoke("enable", 0.2f);
     }
     bool enabled = false;
@@ -20,6 +21,6 @@ public class menuscript : MonoBehaviour
     // Update is called once per frame
     public void LoadScene(string scene)
     {
-        SceneManager.LoadScene(scene);
+        if(enabled) SceneManager.LoadScene(scene);
     }
 }
